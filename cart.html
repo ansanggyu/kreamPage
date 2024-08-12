@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .left {
+        background-color: pink;
+        width: 70vw;
+    }
+    .right {
+        background-color: skyblue;
+        width: 30vw;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li{
+        margin: 3em;
+        border: 1px solid black;
+        padding: 2em;
+        box-sizing: content-box;
+    }
+</style>
+
+<div class="box left">
+    <ul>
+        <li onclick="handleClick(1,'아메리카노',3000)">아메리카노 3000</li>
+        <li onclick="handleClick(2,'라떼',4500)">라떼 4500</li>
+        <li onclick="handleClick(3,'카푸치노',4500)">카푸치노 4500</li>
+        <li onclick="handleClick(4,'에스프레소',3000)">에스프레소 3000</li>
+        <li onclick="handleClick(5,'아이스커피',2000)">아이스커피 2000</li>
+    </ul>
+</div>
+
+
+<div class="box right">
+    <h1>RIGHT</h1>
+</div>
+
+<script src="cart.js"></script>
+
+<script type="module">
+
+    import {cart, addCart, removeCart} from './cart.js'
+
+
+    function handleClick(pno,pname,price){
+        console.log(pno,pname,price)
+        addCart(pno,pname,price)
+    }
+window.handleClick = handleClick
+</script>
+
+</body>
+</html>
